@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./Styles/JS-test.css" />
+  <title>Button</title>
+</head>
+
+<body>
+  <div class="main-div">
+    <button type="button" id="a">A</button>
+    <button type="button" id="b">B</button>
+    <button type="button" id="c">C</button>
+    <button type="button" id="d">D</button>
+  </div>
+  <script>
+    let clickCount = "";
+
+    for (i = 97; i < 101; i++) {
+      document.getElementById(String.fromCharCode(i)).onclick = function () { alerter(this.id) };
+      //document.getElementById(<id>).onclick = function() { alerter(this.id) };
+      //id name --> a(97) to d(100)
+    }
+
+    function alerter(value) {
+      clickCount += document.getElementById(value).textContent;   // SAVE BUTTON ID'S CONTENT
+      alert(clickCount);
+    }
+  </script>
+</body>
+
+</html>

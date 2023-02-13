@@ -1,0 +1,26 @@
+body {
+    height: 100vh;
+    background-color: black;
+  }
+  button {
+    min-width: 100px;
+    min-height: 100px;
+    position: absolute;
+    left: 50%;
+  }
+
+  #a {
+    top: 12%;
+  }
+
+  #b {
+    top: calc(12% + 120px);
+  }
+
+  #c {
+    top: calc(12% + 240px);
+  }
+
+  #d {
+    top: calc(12% + 360px);
+  }

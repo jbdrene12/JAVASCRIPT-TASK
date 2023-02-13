@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./Styles/JS-test_DisplayTxt.css" />
+</head>
+
+<body>
+  <div id="main-div">
+    <form>
+      <label for="thisText">
+        Enter Text:
+        <input type="text" id="thisText" placeholder="Something" onkeydown="myKeyPress()" />
+      </label>
+      <p id="preview"></p>
+      <input type="reset" id="resetButton" onclick="resetFunc()" />
+    </form>
+  </div>
+  <script>
+    let paragraph = "";
+    function myKeyPress() {
+      if (event.key !== "Backspace" && event.key !== "CapsLock" && event.key !== "Control") {
+        paragraph += event.key;     // SAVE KEY PRESS IN A VARIABLE
+        document.getElementById("preview").innerHTML = paragraph;     //  DISPLAY AS <p>
+      }
+    }
+    function resetFunc() {
+      document.getElementById("preview").innerHTML = "";            //  RESET EVERYTHING IN <p>
+      paragraph = "";
+    }
+  </script>
+</body>
+
+</html>

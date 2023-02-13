@@ -1,0 +1,9 @@
+#main-div {
+    position: absolute;
+    left: 40%;
+    top: 50%;
+}
+
+#preview {
+    font-size: 200%;
+}

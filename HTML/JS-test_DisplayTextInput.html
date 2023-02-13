@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./Styles/JS-test_DisplayTxt.css" />
+</head>
+
+<body>
+  <div id="main-div">
+    <label for="thisText">
+      Enter Text:
+      <input type="text" id="thisText" placeholder="Something" onkeyup="return myKeyPress(event)" />
+    </label>
+    <p id="preview"></p>
+    <button type="button" id="submitButton" onclick="buttonFunc()">Button</button>
+  </div>
+  <script>
+    let paragraph = "";
+    function myKeyPress(e) {  // REPLACED event WITH e FOR EASE OF TYPING
+      if (e.key !== "Backspace" && e.key !== "CapsLock" && e.key !== "Control") { 
+        paragraph += e.key                //  SAVE KEY PRESS (IF IT'S NOT A SPECIAL KEY)
+      }
+      else if (e.key === "Backspace") {
+        if (paragraph !== "") {           //  MAKE BACKSPACE WORK WITH DISPLAYED TXT
+          paragraph = paragraph.slice(0, -1);
+        }
+      }
+    }
+    function buttonFunc() {
+      document.getElementById("preview").innerHTML = paragraph; //  DISPLAY TXT IN <p>
+      alert(paragraph);                                         //  DISPLAY TXT AS ALERT
+    }
+  </script>
+</body>
+
+</html>

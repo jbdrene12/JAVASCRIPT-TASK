@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+        <!--<li>Jerin</li>
+        <li>Athul</li>
+        <li>Mithun</li>
+        <li>Rithik</li>
+        <li>Shami</li>
+        <li>Abinesh</li>
+        <li>Ebbe</li>
+        <li>Dunjn</li>
+        <li>Nobdeu</li>
+        <li>Ajidj</li>-->
+    </ul>
+    <script>
+        let names = ["Jerin", "Athul", "Mithun", "Rithik", "Shami", "Abinesh", "Ebbe", "Dunjn", "Nobdeu", "Ajidj"];
+        let list = document.getElementById("list");
+        names.forEach((item) => {
+            let li = document.createElement("li");  // ARRAY TO <li>
+            li.innerText = item;
+            list.appendChild(li);
+        })
+
+        /*for (i = 0; i < 10; i++) {
+
+            check = names[i][0];
+            console.log(check)
+             switch (check) {
+                 case "A":
+                 case "E":
+                 case "I":
+                 case "O":
+                 case "U":
+                     count++;
+                     break;
+                 default:
+                     count--;
+             }
+ 
+             i++;
+ 
+             (count < 0) ? document.querySelector("li:nth-child(" + i + ")").style.backgroundColor = "green" : document.querySelector("li:nth-child(" + i + ")").style.backgroundColor = "red";
+ 
+             --i; 
+        }*/
+        for (let i = 1; i <= 10; i++) {
+            document.querySelector("li:nth-child(" + i + ")").onclick = function () { colorChanger(i) };
+        }
+        function colorChanger(param1) {
+            (param1 % 2 == 0)
+                ?
+                document.querySelector("li:nth-child(" + param1 + ")").style.color = "green"
+
+                :
+                document.querySelector("li:nth-child(" + param1 + ")").style.color = "red";
+
+        }
+    </script>
+    <style>
+        li {
+            width: fit-content;
+            margin: 1.5% auto;
+        }
+    </style>
+</body>
+
+</html>
