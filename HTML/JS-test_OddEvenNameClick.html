@@ -27,41 +27,19 @@
         names.forEach((item) => {
             let li = document.createElement("li");  // ARRAY TO <li>
             li.innerText = item;
-            list.appendChild(li);
+            list.appendChild(li);                   // <li> TO PARENT <ul>
         })
 
-        /*for (i = 0; i < 10; i++) {
-
-            check = names[i][0];
-            console.log(check)
-             switch (check) {
-                 case "A":
-                 case "E":
-                 case "I":
-                 case "O":
-                 case "U":
-                     count++;
-                     break;
-                 default:
-                     count--;
-             }
- 
-             i++;
- 
-             (count < 0) ? document.querySelector("li:nth-child(" + i + ")").style.backgroundColor = "green" : document.querySelector("li:nth-child(" + i + ")").style.backgroundColor = "red";
- 
-             --i; 
-        }*/
         for (let i = 1; i <= 10; i++) {
-            document.querySelector("li:nth-child(" + i + ")").onclick = function () { colorChanger(i) };
+            document.querySelector("li:nth-child(" + i + ")").onclick = function () { colorChanger(i) }; // FUNCTION CALL
         }
         function colorChanger(param1) {
-            (param1 % 2 == 0)
+            (param1 % 2 == 0)                       // CHECK ODD OR EVEN
                 ?
-                document.querySelector("li:nth-child(" + param1 + ")").style.color = "green"
+                document.querySelector("li:nth-child(" + param1 + ")").style.color = "green" // ODD => GREEN
 
                 :
-                document.querySelector("li:nth-child(" + param1 + ")").style.color = "red";
+                document.querySelector("li:nth-child(" + param1 + ")").style.color = "red";  // EVEN => RED
 
         }
     </script>

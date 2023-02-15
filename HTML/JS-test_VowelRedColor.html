@@ -24,10 +24,10 @@
     <script>
         let names = ["Jerin", "Athul", "Mithun", "Rithik", "Shami", "Abinesh", "Ebbe", "Dunjn", "Nobdeu", "Ajidj"];
         let list = document.getElementById("list");
-        names.forEach((item) => {           // ARRAY TO <li>
+        names.forEach((item) => {                   // ARRAY TO <li>
             let li = document.createElement("li");
             li.innerText = item;
-            list.appendChild(li);
+            list.appendChild(li);                   // <li> TO PARENT <ul>
         })
         let check = "";
         let count = 0;
@@ -48,8 +48,9 @@
 
             i++;                            // INDEX OF ARRAY --> INDEX IN <li>
 
-            (count < 0) ? document.querySelector("li:nth-child(" + i + ")").style.backgroundColor = "green" : document.querySelector("li:nth-child(" + i + ")").style.backgroundColor = "red";
-                                            // SELECTING FROM <li>
+            (count < 0) ? document.querySelector("li:nth-child(" + i + ")").style.backgroundColor = "green"
+                : document.querySelector("li:nth-child(" + i + ")").style.backgroundColor = "red";
+            // SELECTING FROM <li>
             --i;
         }
     </script>
