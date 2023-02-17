@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/DisplayNosDivisible.css" />
+</head>
+
+<body>
+   
+    <form>
+        <fieldset>
+            <label for="from">RANGE - FROM <input id="from" type="number" required /></label>
+        </fieldset>
+        <fieldset>
+            <label for="to">RANGE - TO <input id="to" type="number" required /></label>
+        </fieldset>
+        <fieldset>
+            <label for="divident">DIVIDENT <input id="divident" type="number" required /></label>
+        </fieldset>
+    </form>
+
+    <button id="calculate">Calculate</button>
+    <p id="paragraph">Press "Calculate"</p>
+    <script>
+
+
+        document.getElementById("calculate").onclick = function () { calculateNos() }
+
+        function calculateNos() {
+            let rangeFrom = parseInt(document.getElementById("from").value);    // SAVE VALUE IN FIELDS AS INT TO VARIABLES
+            let rangeTo = parseInt(document.getElementById("to").value);
+            let dividentX = parseInt(document.getElementById("divident").value);
+            let nos = "";
+            if (rangeFrom <= rangeTo) {                                         // MAKE SURE 'FROM' IS LOWER THAN 'TO'
+                for (let i = rangeFrom; i <= rangeTo; i++) {                   // WITHIN THE RANGE
+                    if (i % dividentX == 0) {                                  // CHECK IF A NUM IS DIVISIBLE BY DIVIDENT
+                        if (nos !== "") {
+                            nos = nos + ", " + i;                              // SAVE ALL TO A VARIABLE TO DISPLAY
+                        }                                                      // SEPERATING THEM WITH COMMA
+                        else {
+                            nos += i;
+                        }
+                    }
+                }
+            }
+            else {
+                console.log("Error")                                           // DISPLAY ERROR IF 'FROM' IS BIGGER THAN 'TO'
+                nos += "The number in 'RANGE-FROM' should be smaller than 'RANGE-TO'"
+            }
+
+            /*console.log(rangeFrom)
+            console.log(rangeTo)
+            console.log(dividentX)*/
+            console.log(nos);
+            document.getElementById("paragraph").innerHTML = nos;              // DISPLAY NUMBERS IN <p>
+        }
+    </script>
+</body>
+
+</html>

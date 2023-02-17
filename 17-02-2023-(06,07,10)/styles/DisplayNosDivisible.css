@@ -1,0 +1,20 @@
+form {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+fieldset {
+  border: 0;
+}
+
+#calculate {
+  width: 200px;
+  margin: 2% 0 0 42%;
+}
+
+#paragraph {
+  font-size: x-large;
+  text-align: center;
+}
+

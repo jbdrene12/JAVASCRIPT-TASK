@@ -1,0 +1,32 @@
+body {
+    background: black;
+}
+
+.sect {
+    position: relative;
+    background: #0af;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.box {
+    position: absolute;
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    top: 7.5%
+}
+
+.top {
+    left: 30%;
+}
+
+.bottom {
+    left: 60%;
+}
+
+#three,
+#four {
+    margin-top: 25%;
+}
+

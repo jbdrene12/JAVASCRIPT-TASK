@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/ChangeBgColorButton.css" />
+</head>
+
+<body>
+    <button id="colorChange">Click Me</button>
+    <script>
+        let colorArray = ["#0ff", "#f00", "#ff0", "#f0f", "#55f", "#0f0", "#f00", "#777", "#707", "#f70"]; // 10 COLOR ARRAY
+        
+        document.getElementById("colorChange").onclick = function () { randomColor(colorArray) }; // FUNCTION CALL
+        let colorCount = {}; 
+        function randomColor(items) {                                           // CHOOSE RANDOM ITEM FROM ARRAY
+                                                                                // .floor() --> ROUNDS NUM 
+            let rand = items[Math.floor(Math.random() * items.length)];         // .random() --> RANDOM FROM 0 TO 1
+                                                                                // rand --> RANDOM ITEM FROM ARRAY
+            document.querySelector("body").style.backgroundColor = rand;        // APPLY COLOR TO BODY
+            
+            if(rand in colorCount) {                                            // IF COLOR IS ALREADY DISPLAYED INCREASE COUNT
+                colorCount[rand]++;
+            }
+            else {
+                colorCount[rand]= 1;                                            // ELSE SET COUNT TO 1
+            }
+            
+            console.log(`Background color is ${rand}`);                         // DISPLAY CURRENT COLOR
+            console.log(`${rand} displayed ${colorCount[rand]} time(s)`);           // DISPLAY REPEAT COUNT
+            
+        }
+    </script>
+</body>
+
+</html>
