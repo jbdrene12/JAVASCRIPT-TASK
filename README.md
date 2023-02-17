@@ -1,4 +1,4 @@
 # JAVASCRIPT-TASK
-Due date: 1-5 :13/2/23
-Due date: 6-10:17/2/23
-Due date:11,12:22/2/23
+1-5:  Due date: 13/2/23
+6-10: Due date: 17/2/23
+11,12: Due date:22/2/23
