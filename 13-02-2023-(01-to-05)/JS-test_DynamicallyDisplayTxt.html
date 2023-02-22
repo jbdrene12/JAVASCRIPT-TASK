@@ -16,7 +16,7 @@
         Enter Text:
         <input type="text" id="thisText" placeholder="Something" onkeydown="myKeyPress()" />
       </label>
-      <p id="preview"></p>
+      <div id="preview"></div>
       <input type="reset" id="resetButton" onclick="resetFunc()" />
     </form>
   </div>
@@ -25,11 +25,11 @@
     function myKeyPress() {
       if (event.key !== "Backspace" && event.key !== "CapsLock" && event.key !== "Control") {
         paragraph += event.key;     // SAVE KEY PRESS IN A VARIABLE
-        document.getElementById("preview").innerHTML = paragraph;     //  DISPLAY AS <p>
+        document.getElementById("preview").innerHTML = paragraph;     //  DISPLAY IN <div>
       }
     }
     function resetFunc() {
-      document.getElementById("preview").innerHTML = "";            //  RESET EVERYTHING IN <p>
+      document.getElementById("preview").innerHTML = "";            //  RESET EVERYTHING IN <div>
       paragraph = "";
     }
   </script>

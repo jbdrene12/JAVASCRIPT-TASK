@@ -15,7 +15,7 @@
       Enter Text:
       <input type="text" id="thisText" placeholder="Something" onkeyup="myKeyPress(event)" /> <!--FUNCTION CALL ON KEY RELEASE-->
     </label>
-    <p id="preview"></p>
+    <div id="preview"></div>
     <button type="button" id="submitButton" onclick="buttonFunc()">Button</button>  <!--FUNCTION CALL-->
   </div>
   <script>
@@ -31,7 +31,7 @@
       }
     }
     function buttonFunc() {
-      document.getElementById("preview").innerHTML = paragraph; //  DISPLAY TXT IN <p>
+      document.getElementById("preview").innerHTML = paragraph; //  DISPLAY TXT IN <div>
       alert(paragraph);                                         //  DISPLAY TXT AS ALERT
     }
   </script>
