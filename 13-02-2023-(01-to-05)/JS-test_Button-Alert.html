@@ -19,7 +19,7 @@
   <script>
     let clickCount = "";
 
-    for (i = 97; i < 101; i++) {
+    for (let i = 97; i < 101; i++) {
       document.getElementById(String.fromCharCode(i)).onclick = function () { alerter(this.id) };
       //document.getElementById(<id>).onclick = function() { alerter(this.id) };
       //id name --> a(97) to d(100)
