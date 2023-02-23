@@ -1,0 +1,20 @@
+body {
+    background: black;
+    color: white;
+}
+
+#box {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    width: 200px;
+    height: 200px;
+    background: white;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    max-width: 20vw;
+}
+

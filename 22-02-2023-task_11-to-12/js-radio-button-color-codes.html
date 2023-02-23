@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio - ColorCodes</title>
+    <link rel="stylesheet" href="./styles/radio-button.css">
+</head>
+
+<body>
+    <div id="box" onclick="defaultColor()"></div>   <!-- WHITE BOX - ONCLICK RESETS COLOR -->
+    <label for="color-1"><input type="radio" name="color" id="color-1">#0ff</label>
+    <label for="color-2"><input type="radio" name="color" id="color-2">#f00</label>
+    <label for="color-3"><input type="radio" name="color" id="color-3">#ff0</label>
+    <label for="color-4"><input type="radio" name="color" id="color-4">#f0f</label>
+    <label for="color-5"><input type="radio" name="color" id="color-5">#55f</label>
+    <label for="color-6"><input type="radio" name="color" id="color-6">#0f0</label>
+    <label for="color-7"><input type="radio" name="color" id="color-7">#f07</label>
+    <label for="color-8"><input type="radio" name="color" id="color-8">#777</label>
+    <label for="color-9"><input type="radio" name="color" id="color-9">#707</label>
+    <label for="color-10"><input type="radio" name="color" id="color-10">#f70</label>
+    <script>
+        let radio = document.getElementsByName("color");           //  radio = ALL RADIO BUTTONS
+        for(radioButton in radio) {
+            radio[radioButton].onclick = function() {getColorCode(this.id)}; //EVERY RADIO BUTTON - ONCLICK CALLS FUNCTION
+        }
+
+        let selector, label, colorCode;
+        function getColorCode(x) {      //  FUNCTION TO CHANGE THE BOX'S B.G COLOR THAT TAKES ID AS ARGUMENT
+            label = document.querySelector("label[for="+x+"]"); //  TO FIND THE ASSOCIATED LABEL FOR THE ID
+            colorCode = label.textContent;  //  SAVE THE LABEL'S TEXT CONTENT(COLOR CODE) TO A VARIABLE
+            document.getElementById("box").style.backgroundColor = colorCode // SET THE COLOR CODE AS THE BOX BG COLOR
+        }
+      
+        function defaultColor() {      //  FUNCTION TO UNDO CHANGES
+            document.getElementById("box").style.backgroundColor = "white"; // REVERTING B.G COLOR
+            for(radioButton in radio){
+            radio[radioButton].checked = false;}   // UNCHECK ALL RADIO BUTTONS
+        }
+    </script>
+</body>
+
+</html>
