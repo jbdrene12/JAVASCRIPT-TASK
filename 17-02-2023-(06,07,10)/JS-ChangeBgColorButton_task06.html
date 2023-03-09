@@ -14,7 +14,7 @@
     <script>
         let colorArray = ["#0ff", "#f00", "#ff0", "#f0f", "#55f", "#0f0", "#f07", "#777", "#707", "#f70"]; // 10 COLOR ARRAY
         
-        document.getElementById("colorChange").onclick = function () { randomColor(colorArray) }; // FUNCTION CALL
+        document.getElementById("colorChange").onclick = () =>  randomColor(colorArray); // FUNCTION CALL
         let colorCount = {}; 
         function randomColor(items) {                                           // CHOOSE RANDOM ITEM FROM ARRAY
                                                                                 // .floor() --> ROUNDS NUM 

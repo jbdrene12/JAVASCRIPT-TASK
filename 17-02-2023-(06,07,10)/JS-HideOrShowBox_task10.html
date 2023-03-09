@@ -24,10 +24,10 @@
         }
 
         function hideBox(param1) {
-            document.getElementById(param1).style.zIndex = -1;
+            document.getElementById(param1).style.zIndex = -1;          //  HIDE BOX
             for (let j = 0; j < idArray.length; j++) {
                 if (idArray[j] !== param1) {
-                    document.getElementById(idArray[j]).style.zIndex = 1
+                    document.getElementById(idArray[j]).style.zIndex = 1    // SHOW BOX
                 }
 
             }

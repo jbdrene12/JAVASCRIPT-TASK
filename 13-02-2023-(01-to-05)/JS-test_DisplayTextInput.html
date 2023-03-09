@@ -13,18 +13,19 @@
   <div id="main-div">
     <label for="thisText">
       Enter Text:
-      <input type="text" id="thisText" placeholder="Something" onkeyup="myKeyPress(event)" /> <!--FUNCTION CALL ON KEY RELEASE-->
+      <input type="text" id="thisText" placeholder="Something" onkeyup="myKeyPress()" />
+      <!--FUNCTION CALL ON KEY RELEASE-->
     </label>
     <div id="preview"></div>
-    <button type="button" id="submitButton" onclick="buttonFunc()">Button</button>  <!--FUNCTION CALL-->
+    <button type="button" id="submitButton" onclick="buttonFunc()">Button</button> <!--FUNCTION CALL-->
   </div>
   <script>
     let paragraph = "";
-    function myKeyPress(e) {  // REPLACED event WITH e FOR EASE OF TYPING
-      if (e.key !== "Backspace" && e.key !== "CapsLock" && e.key !== "Control") { 
-        paragraph += e.key                //  SAVE KEY PRESS (IF IT'S NOT A SPECIAL KEY)
+    function myKeyPress() {
+      if (event.key !== "Backspace" && event.key !== "CapsLock" && event.key !== "Control") {
+        paragraph += event.key                //  SAVE KEY PRESS (IF IT'S NOT A SPECIAL KEY)
       }
-      else if (e.key === "Backspace") {
+      else if (event.key === "Backspace") {
         if (paragraph !== "") {           //  MAKE BACKSPACE WORK WITH DISPLAYED TXT
           paragraph = paragraph.slice(0, -1);
         }
