@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap-Modal</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+        </script>
+    <link rel="stylesheet" href="./styles/Form-js.css">
+
+</head>
+
+<body>
+    <h1>PRODUCT ORDER FORM</h1>
+    <header id="main">
+        <form name="firstForm" action="#">
+            <fieldset>
+                <label for="firstname">
+                    <div class="name-col">FIRST NAME</div>
+                    <div class="colon-fname">:</div>
+                    <div class="input-field"><input class="top" type="text" id="firstname" name="Fname"
+                            placeholder=" Your First Name" required /></div>
+                </label>
+                <label class="float-left" for="lastname">
+                    <div class="name-col">LAST NAME</div>
+                    <div class="colon-lname">:</div>
+                    <div class="input-field"><input class="top" type="text" id="lastname" name="Lname"
+                            placeholder=" Your Last Name" required /></div>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label for="email">
+                    <div class="name-col">E-MAIL ADDRESS</div>
+                    <div class="colon-email">:</div>
+                    <div class="input-field"><input type="email" id="email" name="Email"
+                            placeholder=" someone@email.com" required />
+                    </div>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label for="code">
+                    <div class="name-col">PHONE NUMBER</div>
+                    <div class="colon-phone">:</div><span id="plus">+</span>
+                    <div class="input-field"><div class="double-field"><input type="tel" id="code" name="Code" placeholder=" ??" maxlength="3"
+                         required />
+
+
+                        <input type="tel" id="phone" name="Phone"
+                                placeholder=" ??????????" maxlength="10" pattern="[0-9]{10}" required /></div>
+                    </div>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label for="billingAdd">
+                    <div class="name-col">BILLING ADDRESS</div>
+                    <div class="colon-b-addr">:</div>
+                    <div class="input-field"><input id="billingAdd" name="BAdd" type="text"
+                            placeholder=" 123, some st., some place, ..." required /></div>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label for="Add">
+                    <div class="name-col">YOUR ADDRESS</div>
+                    <div class="colon-addr">:</div>
+                    <div class="input-field"><input id="Add" name="Address" type="text"
+                            placeholder=" 1XX, some st., some place, ..." required /></div>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label for="city">
+                    <div class="name-col">YOUR CITY</div>
+                    <div class="colon-city">:</div>
+                    <div class="input-field"><input type="text" id="city" name="City" placeholder=" Your City"
+                            required /></div>
+                </label>
+                <label class="float-left" for="state">
+                    <div class="name-col">YOUR STATE/PROVINCE</div>
+                    <div class="colon-state">:</div>
+                    <div class="input-field"><input type="text" id="state" name="State"
+                            placeholder=" Your State/Province" required /></div>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label for="pin">
+                    <div class="name-col">ZIP CODE</div>
+                    <div class="colon-zip">:</div>
+                    <div class="input-field"><input type="tel" id="pin" name="Zip" placeholder=" 000000" maxlength="9"
+                            required /></div>
+                </label>
+                <label class="float-left" for="country">
+                    <div class="name-col">COUNTRY</div>
+                    <div class="colon-country">:</div>
+                    <div class="input-field"><input type="text" name="Country" id="country" placeholder=" Country"
+                           required />
+                    </div>
+                </label>
+            </fieldset>
+            <fieldset class="submit"><button type="button" value="PLACEORDER" class="btn btn-primary"
+                    data-bs-toggle="modal" data-bs-target="#validModal">PLACE ORDER</button><input type="reset"
+                    value="RESET" class="btn btn-warning">
+
+
+                <!-- Modal Using Bootstrap -->
+                <div style="color: black;" class="modal fade" id="validModal" tabindex="-1" aria-labelledby="modalLabel"
+                    aria-hidden="true">
+
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalLabel">
+                                    Failure
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                </button>
+                            </div>
+
+                            <div class="modal-body">
+                                <!-- TO BE FILLED BY JS -->
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                    Close
+                                </button>
+
+                                <button type="submit" id="submitButton" class="btn btn-primary">
+                                    Submit
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </header>
+
+    <footer class="footer">
+        <p>
+            &#169; 2017 Product Order Form. All Rights Reserved | Designed by
+            <a id="orange" target="_blank" href="https://github.com/jbdrene12/HTML-CSS-TASK"><b>Daniel</b></a>
+        </p>
+    </footer>
+    <script>
+
+        let errorName = "";
+        function validator() {
+            let nameF = document.forms.firstForm.Fname.value;
+            let nameL = document.forms.firstForm.Lname.value;
+            let email = document.forms.firstForm.Email.value;
+            let code = document.forms.firstForm.Code.value;
+            let phone = document.forms.firstForm.Phone.value;
+            let bAddress = document.forms.firstForm.BAdd.value;
+            let address = document.forms.firstForm.Address.value;
+            let city = document.forms.firstForm.City.value;
+            let state = document.forms.firstForm.State.value;
+            let country = document.forms.firstForm.Country.value;
+            let zip = document.forms.firstForm.Zip.value;
+            goodName = /^[a-zA-Z ]+$/;
+            goodEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+            goodPhone = /[0-9]{10}/
+            goodCode= /[0-9]{2}/
+            goodCity = /^[a-zA-Z ]+$/;
+            goodState = /^[a-zA-Z ]+$/;
+            goodCountry = /^[a-zA-Z ]+$/;
+            goodZip = /^[0-9][0-9A-Z]{5}/;
+
+
+            if (nameF == "" || !goodName.test(nameF)) {
+                errorName = "Name";
+                return false;
+            }
+
+            if (nameL == "" || !goodName.test(nameL)) {
+                errorName = "Name";
+                return false;
+            }
+
+
+            if (email == "" || !goodEmail.test(email)) {
+                errorName = "E-mail address";
+                return false;
+            }
+
+            if (code == "" || !goodCode.test(code)) {
+                errorName = "Country code";
+                return false;
+            }
+
+            if (phone == "" || !goodPhone.test(phone)) {
+                errorName = "Phone";
+                return false;
+            }
+
+            if (address == "" || bAddress == "") {
+                errorName = "Address";
+                return false;
+            }
+
+            if (state == "" || country == "" || city == "" || !goodState.test(state) || !goodCountry.test(country) || !goodCity.test(city)) {
+                errorName = "City/State/Country";
+                return false;
+            }
+
+            if (zip == "" || zip == "000000" || !goodZip.test(zip)) {
+                errorName = "Zip code";
+                return false;
+            }
+
+            return true;
+        }
+
+        document.querySelector("button[value='PLACEORDER']").onclick = () => { func() }
+        function func() {
+            if (validator()) {
+                document.querySelector(".modal-title").innerHTML = "Success";
+                document.querySelector(".modal-body").innerHTML = "Do you want to submit?";
+                document.querySelector("#submitButton").disabled = false;
+
+            }
+            else {
+                document.querySelector(".modal-title").innerHTML = "Failure";
+                document.querySelector(".modal-body").innerHTML = `${errorName} field is not filled correctly`;
+                document.querySelector("#submitButton").disabled = true;
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>
